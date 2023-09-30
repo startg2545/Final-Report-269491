@@ -1,14 +1,43 @@
-%! Author = Jiro's
-%! Date = 9/29/2023
+\documentclass[semifinal]{cpecmu}
 
-% Preamble
-\documentclass[11pt]{article}
+\projectNo{S701-1}
+\acadyear{2023}
 
-% Packages
-\usepackage{amsmath}
+%\titleTH{ระบบช่วยแนะนำ}
+\titleEN{Recommendation System}
+
+\author{นายเนวิน ยามากุชิ}{Newin Yamaguchi}{630615028}
+\author{นางสาวพัชราภรณ์ สท้านไตรภพ}{Patcharaporn Satantaipop}{630615035}
+
+\cpeadvisor{kampol}
+\cpecommittee{yuthapong}
+\cpecommittee{kenneth}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[colorlinks=true,allcolors=Blue4,citecolor=red,linktoc=all]{hyperref}
+\def\UrlLeft#1\UrlRight{$#1$}
+
+\usepackage{afterpage}
+\usepackage{pdflscape}
+
+\ifglossary
+    \newglossaryentry{lorem ipsum}{
+        name=lorem ipsum,
+        description={derived from Latin dolorem ipsum, translated as ``pain itself''}
+    }
+\fi
 
 % Document
 \begin{document}
+    \include{chapters/frontmatter}
+
+    \pagestyle{empty}\cleardoublepage
+    \normalspacing \setcounter{page}{1} \pagenumbering{arabic} \pagestyle{cpecmu}
+
+    \include{chapters/intro}
+    \include{chapters/background}
+    \include{chapters/approach}
+    \include{chapters/conclusion}
 
     \section{Introduction}\label{sec:introduction}
     \section{Background Knowledge and Theory}\label{sec:background}

@@ -1,55 +1,75 @@
 \documentclass[semifinal]{cpecmu}
 
-\projectNo{S701-1}
-\acadyear{2023}
+\projectNo{P069-1}
+\acadyear{2021}
 
-%\titleTH{ระบบช่วยแนะนำ}
-\titleEN{Recommendation System}
+\titleTH{โครงงานสุดเลิฟของฉัน}
+\titleEN{Your Project Name Goes Here}
 
-\author{นายเนวิน ยามากุชิ}{Newin Yamaguchi}{630615028}
-\author{นางสาวพัชราภรณ์ สท้านไตรภพ}{Patcharaporn Satantaipop}{630615035}
+\author{นายกินรี ไทร์ล้ำเลิศ}{Kinnaree Tirelumlert}{690610696}
+\author{นายบรรจบ พบเอฟตลอด}{Banjob Pob-eftalord}{690610969}
 
-\cpeadvisor{kampol}
-\cpecommittee{yuthapong}
-\cpecommittee{kenneth}
+\cpeadvisor{chinawat}
+\cpecommittee{paskorn}
+\committee{รศ.ดร.\,นิพนธ์ ธีรอำพน}{Assoc.\,Prof.\,Nipon Theera-Umpon, Ph.D.}
 
 \PassOptionsToPackage{hyphens}{url}
-\usepackage[colorlinks=true,allcolors=Blue4,citecolor=red,linktoc=all]{hyperref}
 \def\UrlLeft#1\UrlRight{$#1$}
 
 \usepackage{afterpage}
 \usepackage{pdflscape}
+% \usepackage{natbib}    % for author-year citation styles
+% \usepackage{txfonts}
+% \usepackage{appendix}  % for appendices on a per-chapter basis
+% \usepackage{xtab}      % for tables that go over multiple pages
+% \usepackage{subfigure} % for subfigures within a figure
+% \usepackage{pstricks,pdftricks} % for access to special PostScript and PDF commands
+% \usepackage{nomencl}   % if you have a list of abbreviations
 
+\bibliographystyle{plain}
+
+% \renewcommand{\topfraction}{0.85}
+% \renewcommand{\textfraction}{0.1}
+% \renewcommand{\floatpagefraction}{0.75}
+.
 \ifglossary
-    \newglossaryentry{lorem ipsum}{
-        name=lorem ipsum,
-        description={derived from Latin dolorem ipsum, translated as ``pain itself''}
-    }
+  \newglossaryentry{lorem ipsum}{
+    name=lorem ipsum,
+    description={derived from Latin dolorem ipsum, translated as ``pain itself''}
+  }
 \fi
 
-% Document
 \begin{document}
-    \include{chapters/frontmatter}
+\include{chapters/frontmatter}
 
-    \pagestyle{empty}\cleardoublepage
-    \normalspacing \setcounter{page}{1} \pagenumbering{arabic} \pagestyle{cpecmu}
+\pagestyle{empty}\cleardoublepage
+\normalspacing \setcounter{page}{1} \pagenumbering{arabic} \pagestyle{cpecmu}
 
-    \include{chapters/intro}
-    \include{chapters/background}
-    \include{chapters/approach}
-    \include{chapters/conclusion}
+\include{chapters/intro}
+\include{chapters/background}
+\include{chapters/approach}
+\include{chapters/eval}
+\ifproject
+\include{chapters/conclusion}
+\fi
 
-    \section{Introduction}\label{sec:introduction}
-    \section{Background Knowledge and Theory}\label{sec:background}
-    \section{Project Structure and Methodology}\label{sec:structure}
-    \section{Conclusions and Discussions}\label{sec:conclusions}
+\bibliography{main}
 
-    Hello.
-    This is my first LaTeX\@.
+\ifproject
+\normalspacing
+\appendix
+\include{chapters/appendix}
 
-    New line~\cite{Newin}
+%% Display glossary (optional) -- need glossary option.
+\ifglossary\glossarypage\fi
 
-    \bibliography{main}
-    \bibliographystyle{plain}
+%% Display index (optional) -- need idx option.
+\ifindex\indexpage\fi
 
+\begin{biosketch}
+Your bios ketch goes here.
+Make sure it sits inside
+the \texttt{bios ketch} environment.
+\end{biosketch}
+\fi % \ifproject
 \end{document}

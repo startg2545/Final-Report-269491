@@ -227,12 +227,7 @@
   \typeout{Title page}
   \pagenumbering{roman} % title page is counted but not numbered
   \pagestyle{empty}
-  \ifcpe%
-    \@maketitleTH
-    \@maketitleEN
-  \else
-    \@maketitleEN
-    \@maketitleTH
+  \@maketitleEN\
   \fi
 }
 \renewenvironment{titlepage}{%
